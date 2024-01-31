@@ -1,0 +1,26 @@
+<!-- data_visualization_app/templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Visualization App</title>
+</head>
+<body>
+
+<h1>Data Visualization App</h1>
+
+<a href="{% url 'add_environmental_data' %}">Add Environmental Data</a>
+<a href="{% url 'add_social_data' %}">Add Social Data</a>
+
+{% for data in environmental_data %}
+    <p>{{ data.date }} - {{ data.industry_category }}</p>
+    <!-- Add more details as needed -->
+{% endfor %}
+
+{% for data in social_data %}
+    <p>{{ data.total_employees }} - {{ data.female_employees }} - {{ data.male_employees }}</p>
+    <!-- Add more details as needed -->
+{% endfor %}
+
+</body>
+</html>
