@@ -1,5 +1,4 @@
 <!-- data_visualization_app/templates/index.html -->
-
 {% extends 'base.html' %}
 
 {% block title %}Data Visualization App{% endblock %}
@@ -11,5 +10,8 @@
 <a href="{% url 'add_environmental_data' %}">Add Environmental Data</a>
 <a href="{% url 'add_social_data' %}">Add Social Data</a>
 
-<canvas id="environmentalChart" width="400" height="400"></canvas>
-<canvas id="socialChart" width="400" height="400"></canvas>
+<!-- Set the initial display to none -->
+<canvas id="environmentalChart" width="200" height="200" style="display: none;"></canvas>
+<canvas id="socialChart" width="400" height="400" style="display: none;"></canvas>
+
+{% endblock %}

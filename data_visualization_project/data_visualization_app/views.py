@@ -3,6 +3,12 @@
 from django.shortcuts import render, redirect
 from .models import EnvironmentalData, SocialData
 from .forms import EnvironmentalDataForm, SocialDataForm
+from django.http import JsonResponse
+from .models import EnvironmentalData
+
+def get_environmental_data(request):
+    data = list(EnvironmentalData.objects.values())
+    return JsonResponse(data, safe=False)
 
 def index(request):
     environmental_data = EnvironmentalData.objects.all()
